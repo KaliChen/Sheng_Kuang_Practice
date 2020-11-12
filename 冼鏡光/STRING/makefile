@@ -1,8 +1,8 @@
 #Makefile
 .PHONY:clean
-string_app:	main.o bm.o distseq.o h_seq.o kmp.o lcs.o max_reps.o parcount.o polish.o prefix.o rh_seq.o sub_seq.o
-	gcc -o string_app main.o bm.o distseq.o h_seq.o kmp.o lcs.o max_reps.o parcount.o polish.o prefix.o rh_seq.o.sub_seq.o
-main.o:	main.c bm.h distseq.h h_seq.h kmp.h lcs.h max_reps.h parcount.h polish.h prefix.h rh_seq.h sub_seq.h
+string_app:	main.o bm.o distseq.o h_seq.o kmp.o lcs.o max_reps.o parcount.o polish.o prefix.o rh_seq.o sub_seq.o stredit.o
+	gcc -o string_app main.o bm.o distseq.o h_seq.o kmp.o lcs.o max_reps.o parcount.o polish.o prefix.o rh_seq.o sub_seq.o stredit.o
+main.o:	main.c bm.h distseq.h h_seq.h kmp.h lcs.h max_reps.h parcount.h polish.h prefix.h rh_seq.h sub_seq.h stredit.h
 	gcc -c main.c
 bm.o: bm.c bm.h
 	gcc -c bm.c
@@ -26,5 +26,7 @@ rh_seq.o: rh_seq.c rh_seq.h
 	gcc -c  rh_seq.c
 sub_seq.o: sub_seq.c sub_seq.h
 	gcc -c sub_seq.c
+stredit.o: stredit.c stredit.h
+	gcc -c stredit.c
 clean:
 	$(RM) *.o string_app

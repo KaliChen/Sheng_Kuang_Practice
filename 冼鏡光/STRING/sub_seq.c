@@ -8,7 +8,7 @@
 #include  <stdio.h>
 #include  "sub_seq.h"
 
-int  subsequence(char text[], char pat[], int loc[])
+int  Subsequence(char text[], char pat[], int loc[])
 {
      int  t_len = strlen(text);
      int  p_len = strlen(pat);
@@ -45,7 +45,7 @@ void  sub_seq(void)
      gets(t);
      printf("\nPattern String : ");
      gets(p);
-     if (subsequence(t, p, loc) == FOUND) {
+     if (Subsequence(t, p, loc) == FOUND) {
           printf("\n\nPattern's Locations are shown Bellow :\n");
           printf("\n%s\n", t);
           for (i = j = 0; i < strlen(p); i++, j++) {

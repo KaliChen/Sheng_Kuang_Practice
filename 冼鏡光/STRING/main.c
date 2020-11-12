@@ -9,6 +9,7 @@
 #include "prefix.h"
 #include "rh_seq.h"
 #include "sub_seq.h"
+#include "stredit.h"
 
 int main(){
     bm();
@@ -22,6 +23,7 @@ int main(){
     prefix();
     rh_seq();
     sub_seq();
+    stredit();
     return 0;
 
 }

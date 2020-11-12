@@ -13,19 +13,12 @@
 #include  <stdio.h>           /* for printf()             */
 #include  <stdlib.h>          /* for malloc() and free()  */
 #include  <string.h>          /* for strlen(), memncpy()  */
+#include  "stredit.h"
 
 void  edit(char [], char [], int [], int [], int *);
 void  edit_op(char [], char [], int [], int [], int);
 void  reverse(int [], int);
 
-#define   INSERT_COST       1 /* cost for inserting a char*/
-#define   DELETE_COST       1 /* cost for deleting a char */
-#define   EXCHANGE_COST     2 /* cost for exchanging chars*/
-
-#define   MIN(x, y, z)      ((x) <= (y) ?                   \
-                                 ((x) <= (z) ? (x) : (z)) : \
-                                 ((y) <= (z) ? (y) : (z))   \
-                            )
 
 void  edit(char source[], char target[], int s[], int t[], int *count)
 {
@@ -87,7 +80,7 @@ void  edit(char source[], char target[], int s[], int t[], int *count)
 /*    This routine is used to output editing operations.  */
 /* ------------------------------------------------------ */
 
-#define    MAX(x, y)   ((x) >= (y) ? (x) : (y))
+
 
 void  edit_op(char source[], char target[], int s[], int t[], int n)
 {
@@ -123,9 +116,6 @@ void  edit_op(char source[], char target[], int s[], int t[], int n)
 /* FUNCTION  reverse :                                    */
 /*    This function reverse the given array in place.     */
 /* ------------------------------------------------------ */
-
-#define   SWAP(a, b)   { t = a; a = b; b = t; }
-
 void  reverse(int x[], int n)
 {
      int  i, j, t;
@@ -136,9 +126,7 @@ void  reverse(int x[], int n)
 
 /* ------------------------------------------------------ */
 
-#include  <stdio.h>
-
-void  main(void)
+void  stredit(void)
 {
      char  source[100];
      char  target[100];
@@ -155,4 +143,3 @@ void  main(void)
      edit(source, target, on_source, on_target, &equal_count);
      edit_op(source, target, on_source, on_target, equal_count);
 }
-
