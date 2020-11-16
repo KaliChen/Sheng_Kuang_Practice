@@ -12,13 +12,9 @@
 /* ------------------------------------------------------ */
 
 #include  <string.h>
+#include  "binsert.h"
 
-#define   YES    1
-#define   NO     0
-
-#define   SIZE   sizeof(int)/sizeof(char)
-
-void  sort(int input[], int n)
+void  binsert(int input[], int n)
 {
      int  current, pos;
      int  low, high, mid;
@@ -48,4 +44,3 @@ void  sort(int input[], int n)
           }
      }
 }
-
