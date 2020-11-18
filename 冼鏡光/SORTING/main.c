@@ -1,6 +1,6 @@
 #include "binsert.h"
 #include "contain.h"
-#include "heapmerg."
+#include "heapmerg.h"
 
 
 int main(){
